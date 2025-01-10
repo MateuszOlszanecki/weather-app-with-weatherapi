@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { CurrentWeather } from '../models/current-weather.model';
+import { ApiError } from '../models/api-error.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +11,16 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   // This function handles errors in 3 different ways to ensure the correct error message is returned.
-  private handleError(error: any): Observable<never> {
-    const apiErrorResponse = error?.error?.error?.message;
-    const httpErrorResponse = error?.error?.message;
+  private handleError(error: ApiError): Observable<never> {
+    const apiErrorResponse = error.error?.error?.message;
+    const httpErrorResponse = error.error?.message;
     if (apiErrorResponse) {
-      return throwError(() => apiErrorResponse);
+      return throwError(() => new Error(apiErrorResponse));
     }
     if (httpErrorResponse) {
-      return throwError(() => httpErrorResponse);
+      return throwError(() => new Error(httpErrorResponse));
     }
-    return throwError(() => 'Unidentified error occurred.');
+    return throwError(() => new Error('An unexpected error occurred.'));
   }
 
   // This function constructs the API url to fetch current weather data for given city.
