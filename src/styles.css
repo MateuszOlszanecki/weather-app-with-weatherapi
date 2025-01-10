@@ -25,5 +25,5 @@ h1 {
 }
 
 .btn-darkmode {
-  @apply absolute top-5 right-5 w-20 h-12 bg-neutral-900 dark:bg-gray-100 rounded-full text-gray-100 dark:text-black font-semibold border border-gray-100 shadow dark:border-gray-700;
+  @apply absolute top-5 right-5 w-20 h-12 bg-neutral-900 dark:bg-gray-100 rounded-full text-gray-100 dark:text-black font-semibold border border-gray-100 shadow dark:border-gray-900;
 }
