@@ -8,6 +8,9 @@ export interface CurrentWeather {
       code: number;
     };
     temp_c: number;
-    feelslike_c: number;
+  };
+  location: {
+    localtime: string;
+    name: string;
   };
 }

@@ -7,10 +7,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -26,4 +22,8 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.btn-darkmode {
+  @apply absolute top-5 right-5 w-20 h-12 bg-neutral-900 dark:bg-gray-100 rounded-full text-gray-100 dark:text-black font-semibold border border-gray-100 shadow dark:border-gray-700;
 }

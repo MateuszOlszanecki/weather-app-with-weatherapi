@@ -1,12 +1,20 @@
-<div class="flex justify-center flex-col gap-4 items-center">
-  <div>
-    <a href="https://nubisoft.io/" target="_blank">
-      <svg-nubisoft-icon></svg-nubisoft-icon>
-    </a>
+<div [ngClass]="darkMode ? 'dark' : ''">
+  <div
+    class="flex flex-col gap-4 items-center min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-gray-100"
+  >
+    <div class="mt-5">
+      <a href="https://nubisoft.io/" target="_blank">
+        <svg-nubisoft-icon></svg-nubisoft-icon>
+      </a>
+    </div>
+    <h1>NubiWeather</h1>
+    <section class="grid gap-4 md:grid-cols-2 p-4 md:px-12">
+      <ng-container *ngFor="let cityName of citiesNames">
+        <card [cityName]="cityName"></card
+      ></ng-container>
+    </section>
   </div>
-  <h1>NubiWeather</h1>
-  <section>
-    <h2>Here's your starting point.</h2>
-    <h3>Good luck! :)</h3>
-  </section>
+  <button class="btn-darkmode" (click)="toggleDarkMode()">
+    {{ darkMode ? "Light" : "Dark" }}
+  </button>
 </div>
