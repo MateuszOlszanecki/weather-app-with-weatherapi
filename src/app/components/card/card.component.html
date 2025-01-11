@@ -1,23 +1,46 @@
 @if(weather$ | async; as weather) {
-<div
-  class="flex flex-col items-center w-64 md:w-80 p-6 bg-white border-2 border-emerald-600 rounded-md shadow dark:bg-gray-800 dark:border-teal-800"
->
-  <div class="text-center">
-    <h2 class="text-3xl md:text-4xl font-semibold">
-      {{ weather.location.name }}
-    </h2>
-    <p class="text-base md:text-md dark:text-gray-400">
-      {{ weather.location.localtime | date : "short" : "en-US" }}
-    </p>
+<div class="card">
+  <div
+    class="text-3xl md:text-4xl font-semibold text-center w-full overflow-x-auto overflow-y-clip pb-2"
+  >
+    {{ weather.location.name }}
   </div>
-  <img class="w-16 h-16 m-4" [src]="weather.current.condition.icon" />
-  <div class="mb-2 text-3xl font-semibold md:text-4xl">
+  <p class="dark:text-gray-400">
+    {{ weather.location.localtime | date : "short" : "en-US" }}
+  </p>
+  <img class="size-16 m-4" [src]="weather.current.condition.icon" />
+  <div class="mb-2 text-3xl md:text-4xl font-semibold">
     {{ weather.current.temp_c }}°
   </div>
-  <p class="dark:text-gray-400 text-base md:text-md">
+  <p class="dark:text-gray-400">
     {{ weather.current.condition.text }}
   </p>
 </div>
+} @else { @if(errorMessage$ | async; as errorMessage) {
+<div class="card-error">
+  <div class="mb-5 text-3xl md:text-4xl font-semibold text-red-700">
+    Oops...
+  </div>
+  <p class="dark:text-gray-400">
+    {{ errorMessage }}
+  </p>
+</div>
 } @else {
-<!-- TODO -->
-}
+<div class="card">
+  <div class="animate-pulse flex flex-col items-center">
+    <div
+      class="text-3xl md:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
+    >
+      _
+    </div>
+    <p class="text-transparent pulse-text-block select-none">_</p>
+    <div class="size-16 bg-gray-200 rounded-full dark:bg-gray-700 m-4"></div>
+    <div
+      class="text-3xl md:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
+    >
+      _
+    </div>
+    <p class="text-transparent pulse-text-block select-none">_</p>
+  </div>
+</div>
+} }

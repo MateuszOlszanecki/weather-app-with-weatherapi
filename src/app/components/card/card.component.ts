@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { catchError, EMPTY, Observable } from 'rxjs';
+import { BehaviorSubject, catchError, EMPTY, Observable } from 'rxjs';
 import { CurrentWeather } from '../../models/current-weather.model';
 import WEATHER_API_KEY from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
@@ -18,8 +18,11 @@ import { CommonModule } from '@angular/common';
 })
 export class CardComponent implements OnInit {
   @Input() cityName: string;
+
   weather$: Observable<CurrentWeather>;
-  errorMessage: string = '';
+  errorMessage$: BehaviorSubject<string | null> = new BehaviorSubject<
+    string | null
+  >(null);
 
   constructor(private apiService: ApiService) {}
 
@@ -28,7 +31,7 @@ export class CardComponent implements OnInit {
       .getCurrentWeather(WEATHER_API_KEY, this.cityName)
       .pipe(
         catchError((error) => {
-          this.errorMessage = error;
+          this.errorMessage$.next(error.message);
           return EMPTY;
         })
       );
