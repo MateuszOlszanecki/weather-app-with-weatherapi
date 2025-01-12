@@ -29,11 +29,11 @@ h1 {
 }
 
 .card {
-  @apply flex flex-col items-center justify-center w-64 sm:w-80 p-6 bg-white border-2 border-emerald-600 rounded-md shadow dark:bg-gray-800 dark:border-teal-800;
+  @apply flex flex-col items-center justify-center w-64 sm:w-80 p-6 bg-white border-2 border-emerald-600 rounded-md shadow dark:bg-gray-800 dark:border-teal-600;
 }
 
 .card-error {
-  @apply flex flex-col items-center justify-center w-64 sm:w-80 p-6 bg-white border-2 border-red-700 rounded-md shadow dark:bg-gray-800 dark:border-red-900;
+  @apply flex flex-col items-center justify-center w-64 sm:w-80 p-6 bg-white border-2 border-red-600 rounded-md shadow dark:bg-gray-800;
 }
 
 .pulse-text-block {
