@@ -9,10 +9,12 @@ import { BehaviorSubject, catchError, EMPTY, Observable } from 'rxjs';
 import { CurrentWeather } from '../../models/current-weather.model';
 import WEATHER_API_KEY from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
+import { ErrorCardComponent } from '../error-card/error-card.component';
+import { LoadingCardComponent } from '../loading-card/loading-card.component';
 
 @Component({
   selector: 'card',
-  imports: [CommonModule],
+  imports: [CommonModule, ErrorCardComponent, LoadingCardComponent],
   templateUrl: './card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

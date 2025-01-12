@@ -17,30 +17,7 @@
   </p>
 </div>
 } @else { @if(errorMessage$ | async; as errorMessage) {
-<div class="card-error">
-  <div class="mb-5 text-3xl md:text-4xl font-semibold text-red-700">
-    Oops...
-  </div>
-  <p class="dark:text-gray-400">
-    {{ errorMessage }}
-  </p>
-</div>
+<error-card [errorMessage]="errorMessage" />
 } @else {
-<div class="card">
-  <div class="animate-pulse flex flex-col items-center">
-    <div
-      class="text-3xl md:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
-    >
-      _
-    </div>
-    <p class="text-transparent pulse-text-block select-none">_</p>
-    <div class="size-16 bg-gray-200 rounded-full dark:bg-gray-700 m-4"></div>
-    <div
-      class="text-3xl md:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
-    >
-      _
-    </div>
-    <p class="text-transparent pulse-text-block select-none">_</p>
-  </div>
-</div>
+<loading-card />
 } }
