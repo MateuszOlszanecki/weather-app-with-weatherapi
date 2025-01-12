@@ -11,10 +11,16 @@ import WEATHER_API_KEY from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { ErrorCardComponent } from '../error-card/error-card.component';
 import { LoadingCardComponent } from '../loading-card/loading-card.component';
+import { UpscaleImagePipe } from '../../pipes/upscale-image.pipe';
 
 @Component({
   selector: 'card',
-  imports: [CommonModule, ErrorCardComponent, LoadingCardComponent],
+  imports: [
+    CommonModule,
+    ErrorCardComponent,
+    LoadingCardComponent,
+    UpscaleImagePipe,
+  ],
   templateUrl: './card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

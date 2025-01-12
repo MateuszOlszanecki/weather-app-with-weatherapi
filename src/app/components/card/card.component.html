@@ -8,7 +8,10 @@
   <p class="dark:text-gray-400">
     {{ weather.location.localtime | date : "short" : "en-US" }}
   </p>
-  <img class="size-16 m-4" [src]="weather.current.condition.icon" />
+  <img
+    class="size-16 m-4"
+    [src]="weather.current.condition.icon | upscaleImage"
+  />
   <div class="mb-2 text-3xl md:text-4xl font-semibold">
     {{ weather.current.temp_c }}°
   </div>
