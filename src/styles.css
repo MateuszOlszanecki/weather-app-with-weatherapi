@@ -25,14 +25,19 @@ h1 {
 }
 
 .btn-darkmode {
-  @apply absolute top-5 right-5 w-16 h-10 sm:w-20 sm:h-12 bg-neutral-900 dark:bg-gray-100 rounded-full text-gray-100 dark:text-black font-semibold shadow;
+  @apply absolute top-5 right-5 w-16 h-12 sm:w-20 bg-neutral-900 dark:bg-gray-100 rounded-full text-gray-100 dark:text-black font-semibold shadow;
+}
+
+.btn-darkmode:hover {
+  @apply bg-opacity-60;
 }
 
 .card {
   @apply flex flex-col items-center justify-center w-64 sm:w-80 p-6 bg-white border-2 rounded-md shadow;
 }
 
-.card-weather {
+.card-weather,
+.card-add {
   @apply card border-emerald-600  dark:bg-gray-800 dark:border-teal-600;
 }
 
@@ -42,4 +47,8 @@ h1 {
 
 .pulse-text-block {
   @apply bg-gray-200 rounded-full dark:bg-gray-700 w-52;
+}
+
+.x-button {
+  @apply absolute top-1 right-1 rounded-bl-md size-9;
 }

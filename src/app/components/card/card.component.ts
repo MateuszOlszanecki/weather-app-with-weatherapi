@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { ErrorCardComponent } from '../error-card/error-card.component';
 import { LoadingCardComponent } from '../loading-card/loading-card.component';
 import { UpscaleImagePipe } from '../../pipes/upscale-image.pipe';
+import { CitiesListService } from '../../services/cities-list.service';
 
 @Component({
   selector: 'card',
@@ -26,13 +27,17 @@ import { UpscaleImagePipe } from '../../pipes/upscale-image.pipe';
 })
 export class CardComponent implements OnInit {
   @Input() cityName: string;
+  @Input() index: number;
 
   weather$: Observable<CurrentWeather>;
   errorMessage$: BehaviorSubject<string | null> = new BehaviorSubject<
     string | null
   >(null);
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private citiesListService: CitiesListService
+  ) {}
 
   ngOnInit(): void {
     this.weather$ = this.apiService
@@ -43,5 +48,9 @@ export class CardComponent implements OnInit {
           return EMPTY;
         })
       );
+  }
+
+  onDelete() {
+    this.citiesListService.deleteCity(this.index);
   }
 }

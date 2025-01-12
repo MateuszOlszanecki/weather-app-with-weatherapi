@@ -1,26 +1,48 @@
-@if(weather$ | async; as weather) {
-<div class="card-weather">
-  <div
-    class="text-3xl md:text-4xl font-semibold text-center w-full overflow-x-auto overflow-y-clip pb-2"
+<div class="relative">
+  <button
+    class="x-button rounded-bl-md rounded-tr-md text-sm size-8 ms-auto inline-flex justify-center items-center"
+    (click)="onDelete()"
   >
-    {{ weather.location.name }}
+    <svg
+      class="size-4"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 14 14"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+      />
+    </svg>
+  </button>
+  @if(weather$ | async; as weather) {
+  <div class="card-weather">
+    <div
+      class="text-3xl md:text-4xl font-semibold text-center w-full overflow-x-auto overflow-y-clip pb-2"
+    >
+      {{ weather.location.name }}
+    </div>
+    <p class="dark:text-gray-400">
+      {{ weather.location.localtime | date : "short" : "en-US" }}
+    </p>
+    <img
+      class="size-16 m-4"
+      [src]="weather.current.condition.icon | upscaleImage"
+    />
+    <div class="mb-2 text-3xl md:text-4xl font-semibold">
+      {{ weather.current.temp_c }}°
+    </div>
+    <p class="dark:text-gray-400">
+      {{ weather.current.condition.text }}
+    </p>
   </div>
-  <p class="dark:text-gray-400">
-    {{ weather.location.localtime | date : "short" : "en-US" }}
-  </p>
-  <img
-    class="size-16 m-4"
-    [src]="weather.current.condition.icon | upscaleImage"
-  />
-  <div class="mb-2 text-3xl md:text-4xl font-semibold">
-    {{ weather.current.temp_c }}°
-  </div>
-  <p class="dark:text-gray-400">
-    {{ weather.current.condition.text }}
-  </p>
+  } @else { @if(errorMessage$ | async; as errorMessage) {
+  <error-card [errorMessage]="errorMessage" />
+  } @else {
+  <loading-card />
+  } }
 </div>
-} @else { @if(errorMessage$ | async; as errorMessage) {
-<error-card [errorMessage]="errorMessage" />
-} @else {
-<loading-card />
-} }

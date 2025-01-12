@@ -1,0 +1,19 @@
+<div class="card-add">
+  <form [formGroup]="newCityForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      id="first_name"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-md block w-full p-2.5 mb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+      placeholder="Type city name"
+      autocomplete="off"
+      formControlName="cityName"
+    />
+    <button
+      type="submit"
+      class="w-full h-12 disabled:bg-gray-500 disabled:dark:bg-gray-500 disabled:dark:text-gray-800 hover:bg-opacity-70 dark:hover:bg-opacity-70 bg-emerald-600 dark:bg-teal-600 rounded-full text-gray-100 dark:text-black font-semibold shadow"
+      [disabled]="!newCityForm.valid"
+    >
+      Add
+    </button>
+  </form>
+</div>
