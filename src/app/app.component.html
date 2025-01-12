@@ -10,8 +10,8 @@
     <h1>NubiWeather</h1>
     <section class="grid gap-4 md:grid-cols-2 p-4">
       <ng-container *ngFor="let cityName of citiesNames">
-        <card [cityName]="cityName"></card
-      ></ng-container>
+        <card [cityName]="cityName"
+      /></ng-container>
     </section>
   </div>
   <button class="btn-darkmode" (click)="toggleDarkMode()">
