@@ -29,7 +29,7 @@ export class AddCardComponent implements OnInit {
   }
 
   onSubmit() {
-    const cityName = this.newCityForm.value.cityName;
+    const cityName = this.newCityForm.value.cityName.trim();
     if (cityName) this.citiesListService.addCity(cityName);
     this.initForm();
   }
