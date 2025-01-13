@@ -41,7 +41,7 @@ To run the application locally, follow these steps:
 
 4. Add API KEY:
 
-   Create folder `environments` and in this folder create file `environment.js`.
+   Create folder `environments` in `src` folder and in this folder create file `environment.js`.
    In paste this code:
 
   ```bash
