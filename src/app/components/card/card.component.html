@@ -63,6 +63,6 @@
   } @else { @if(errorMessage$ | async; as errorMessage) {
   <error-card [errorMessage]="errorMessage" />
   } @else {
-  <loading-card />
+  <loading-card [cityName]="cityName" />
   } }
 </div>

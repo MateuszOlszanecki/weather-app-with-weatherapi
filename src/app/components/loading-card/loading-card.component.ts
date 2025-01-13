@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'loading-card',
@@ -7,4 +7,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [NgFor],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoadingCardComponent {}
+export class LoadingCardComponent {
+  @Input() cityName: string;
+}
