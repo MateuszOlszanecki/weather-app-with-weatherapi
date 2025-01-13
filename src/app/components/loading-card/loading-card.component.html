@@ -1,17 +1,34 @@
 <div class="card-weather">
   <div class="animate-pulse flex flex-col items-center">
     <div
-      class="text-3xl md:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
+      class="text-3xl sm:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
     >
       _
     </div>
     <p class="text-transparent pulse-text-block select-none">_</p>
     <div class="size-16 bg-gray-200 rounded-full dark:bg-gray-700 m-4"></div>
     <div
-      class="text-3xl md:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
+      class="text-3xl sm:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
     >
       _
     </div>
     <p class="text-transparent pulse-text-block select-none">_</p>
+    <hr class="h-px my-8 w-full rounded border-0 bg-gray-500 bg-opacity-40" />
+    <div class="flex items-center gap-3 sm:gap-10 flex-wrap">
+      <div
+        class="flex flex-col items-center text-center"
+        *ngFor="let i of [1, 2]"
+      >
+        <p class="text-transparent pulse-text-block select-none">_</p>
+        <div
+          class="size-16 bg-gray-200 rounded-full dark:bg-gray-700 m-4"
+        ></div>
+        <div
+          class="text-3xl sm:text-4xl font-semibold mb-2 text-transparent pulse-text-block select-none"
+        >
+          _
+        </div>
+      </div>
+    </div>
   </div>
 </div>

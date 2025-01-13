@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { BehaviorSubject, catchError, EMPTY, Observable } from 'rxjs';
-import { CurrentWeather } from '../../models/current-weather.model';
+import { Weather } from '../../models/weather.model';
 import WEATHER_API_KEY from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { ErrorCardComponent } from '../error-card/error-card.component';
@@ -29,7 +29,9 @@ export class CardComponent implements OnInit {
   @Input() cityName: string;
   @Input() index: number;
 
-  weather$: Observable<CurrentWeather>;
+  numberOfDays: number = 3;
+
+  weather$: Observable<Weather>;
   errorMessage$: BehaviorSubject<string | null> = new BehaviorSubject<
     string | null
   >(null);
@@ -41,7 +43,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.weather$ = this.apiService
-      .getCurrentWeather(WEATHER_API_KEY, this.cityName)
+      .getWeather(WEATHER_API_KEY, this.cityName, this.numberOfDays)
       .pipe(
         catchError((error) => {
           this.errorMessage$.next(error.message);

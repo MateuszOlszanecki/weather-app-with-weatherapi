@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { CurrentWeather } from '../models/current-weather.model';
+import { Weather } from '../models/weather.model';
 import { ApiError } from '../models/api-error.model';
 
 @Injectable({
@@ -24,14 +24,15 @@ export class ApiService {
   }
 
   // This function constructs the API url to fetch current weather data for given city.
-  getCurrentWeather(
+  getWeather(
     apiKey: string,
     cityName: string,
+    numberOfDays: number,
     protocol: 'http' | 'https' = 'https'
-  ): Observable<CurrentWeather> {
-    const apiUrl = `${protocol}://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}`;
+  ): Observable<Weather> {
+    const apiUrl = `${protocol}://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&days=${numberOfDays}&aqi=no&alerts=no`;
     return this.http
-      .get<CurrentWeather>(apiUrl)
+      .get<Weather>(apiUrl)
       .pipe(catchError((error) => this.handleError(error)));
   }
 }

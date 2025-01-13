@@ -22,7 +22,7 @@
   @if(weather$ | async; as weather) {
   <div class="card-weather">
     <div
-      class="text-3xl md:text-4xl font-semibold text-center w-full overflow-x-auto overflow-y-clip pb-2"
+      class="text-3xl sm:text-4xl font-semibold text-center w-full overflow-x-auto overflow-y-clip pb-2"
     >
       {{ weather.location.name }}
     </div>
@@ -33,12 +33,32 @@
       class="size-16 m-4"
       [src]="weather.current.condition.icon | upscaleImage"
     />
-    <div class="mb-2 text-3xl md:text-4xl font-semibold">
+    <div class="mb-2 text-3xl sm:text-4xl font-semibold">
       {{ weather.current.temp_c }}°
     </div>
     <p class="dark:text-gray-400">
       {{ weather.current.condition.text }}
     </p>
+    <hr class="h-px my-8 w-full rounded border-0 bg-gray-500 bg-opacity-40" />
+    <div class="flex items-center gap-3 sm:gap-10 flex-wrap">
+      <div
+        class="flex flex-col items-center text-center"
+        *ngFor="let i of [1, 2]"
+      >
+        <p class="dark:text-gray-400">
+          {{ weather.forecast.forecastday[i].date | date : "EEEE" : "en-US" }}
+        </p>
+        <img
+          class="size-16 m-4"
+          [src]="
+            weather.forecast.forecastday[i].day.condition.icon | upscaleImage
+          "
+        />
+        <div class="mb-2 text-3xl sm:text-4xl font-semibold">
+          {{ weather.forecast.forecastday[i].day.avgtemp_c }}°
+        </div>
+      </div>
+    </div>
   </div>
   } @else { @if(errorMessage$ | async; as errorMessage) {
   <error-card [errorMessage]="errorMessage" />

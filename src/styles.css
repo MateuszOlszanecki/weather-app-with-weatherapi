@@ -46,7 +46,7 @@ h1 {
 }
 
 .pulse-text-block {
-  @apply bg-gray-200 rounded-full dark:bg-gray-700 w-52;
+  @apply bg-gray-200 rounded-full dark:bg-gray-700 w-full;
 }
 
 .x-button {
