@@ -55,6 +55,12 @@ To run the application locally, follow these steps:
   ng serve
   ```
 
+6. Paste this link into a browser:
+
+  ```bash
+  http://localhost:4200/
+  ```
+
 ## Screenshots
 
 Here are some screenshots of the application:
