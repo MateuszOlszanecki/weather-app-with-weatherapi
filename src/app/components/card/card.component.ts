@@ -8,18 +8,20 @@ import { ApiService } from '../../services/api.service';
 import { BehaviorSubject, catchError, EMPTY, Observable } from 'rxjs';
 import { Weather } from '../../models/weather.model';
 import WEATHER_API_KEY from '../../../environments/environment';
-import { CommonModule } from '@angular/common';
 import { ErrorCardComponent } from '../error-card/error-card.component';
 import { LoadingCardComponent } from '../loading-card/loading-card.component';
 import { UpscaleImagePipe } from '../../pipes/upscale-image.pipe';
 import { CitiesListService } from '../../services/cities-list.service';
+import { AsyncPipe, DatePipe, NgFor } from '@angular/common';
 
 @Component({
   selector: 'card',
   imports: [
-    CommonModule,
+    NgFor,
     ErrorCardComponent,
     LoadingCardComponent,
+    DatePipe,
+    AsyncPipe,
     UpscaleImagePipe,
   ],
   templateUrl: './card.component.html',

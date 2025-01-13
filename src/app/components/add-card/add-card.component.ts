@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -10,7 +9,7 @@ import { CitiesListService } from '../../services/cities-list.service';
 
 @Component({
   selector: 'add-card',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './add-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
