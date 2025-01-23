@@ -41,8 +41,8 @@ To run the application locally, follow these steps:
 
 4. Add API KEY:
 
-   Create folder `environments` in `src` folder and in this folder create file `environment.js`.
-   In `environment.js` file paste this code:
+   Create folder `environments` in `src` folder and in this folder create file `environment.ts`.
+   In `environment.ts` file paste this code:
 
   ```bash
   const WEATHER_API_KEY = 'your-weatherapi-api-key';
