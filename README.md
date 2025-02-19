@@ -15,7 +15,7 @@ The application is built with **responsive design**, ensuring that it looks and 
 - **Dark Mode**: Toggle between dark and light modes. The setting is saved in the browser’s local storage for persistence.
 
 ## Link
-You can check out the live version of the app here: https://weather-app-nubisoft.web.app
+You can check out the live version of the app here: [https://weather-app-nubisoft.web.app](https://weather-app-4151b.web.app/)
 
 ## Installation
 
@@ -67,11 +67,11 @@ Here are some screenshots of the application:
 
 *Home page (Dark Mode) displaying a list of cities and their weather.*
 
-![Home Page (Dark Mode)](https://github.com/user-attachments/assets/a26cfa79-737d-43ed-a2a1-50eecfe1b7ac)
+![Home Page (Dark Mode)](https://github.com/user-attachments/assets/bafaa326-0f2f-459f-9c59-70a2ab0522db)
 
 *Home page (Light Mode) displaying a list of cities and their weather.*
 
-![Home Page (Light Mode)](https://github.com/user-attachments/assets/765edd26-8f9a-495d-ab06-0a4d19835ca6)
+![Home Page (Light Mode)](https://github.com/user-attachments/assets/d0bc6d49-750f-4062-be11-0500a6e93183)
 
 *Error and loading cards.*
 
