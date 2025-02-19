@@ -1,59 +1,78 @@
-# WeatherAppWithWeatherapi
+# Weather App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+## Description
 
-## Development server
+This is a weather management application built with Angular and styled using Tailwind CSS. It allows users to manage a list of cities and view the weather forecast for each of them. Users can add new cities, remove existing ones, and toggle between dark and light modes. The app provides clear feedback for loading states and error handling.
 
-To start a local development server, run:
+The application is built with **responsive design**, ensuring that it looks and works well on all screen sizes, from mobile devices to desktops.
 
-```bash
-ng serve
-```
+## Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Add New Cities**: Users can add cities to their list and view their weather forecast.
+- **Weather Forecast**: Displays weather forecast for current day and two days ahead for each city.
+- **Error Handling**: If weather data cannot be fetched, an error message is shown.
+- **Loading State**: A loading indicator appears while weather data is being fetched.
+- **Dark Mode**: Toggle between dark and light modes. The setting is saved in the browser’s local storage for persistence.
 
-## Code scaffolding
+## Link
+You can check out the live version of the app here: https://weather-app-nubisoft.web.app
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Installation
 
-```bash
-ng generate component component-name
-```
+To run the application locally, follow these steps:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repository:
 
-```bash
-ng generate --help
-```
+  ```bash
+  git clone https://github.com/MateuszOlszanecki/weather-app-with-weatherapi.git
+  ```
 
-## Building
+2. Navigate to the project folder:
 
-To build the project run:
+  ```bash
+  cd weather-app-with-weatherapi
+  ```
 
-```bash
-ng build
-```
+3. Install the dependencies:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+  ```bash
+  npm install
+  ```
 
-## Running unit tests
+4. Add API KEY:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   Create folder `environments` in `src` folder and in this folder create file `environment.ts`.
+   In `environment.ts` file paste this code:
 
-```bash
-ng test
-```
+  ```bash
+  const WEATHER_API_KEY = 'your-weatherapi-api-key';
+  export default WEATHER_API_KEY;
+  ```
 
-## Running end-to-end tests
+5. Run the application:
 
-For end-to-end (e2e) testing, run:
+  ```bash
+  ng serve
+  ```
 
-```bash
-ng e2e
-```
+6. Paste this link into a browser:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+  ```bash
+  http://localhost:4200/
+  ```
 
-## Additional Resources
+## Screenshots
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Here are some screenshots of the application:
+
+*Home page (Dark Mode) displaying a list of cities and their weather.*
+
+![Home Page (Dark Mode)](https://github.com/user-attachments/assets/a26cfa79-737d-43ed-a2a1-50eecfe1b7ac)
+
+*Home page (Light Mode) displaying a list of cities and their weather.*
+
+![Home Page (Light Mode)](https://github.com/user-attachments/assets/765edd26-8f9a-495d-ab06-0a4d19835ca6)
+
+*Error and loading cards.*
+
+![Error And Loading Cards](https://github.com/user-attachments/assets/fc9cc037-e5f0-4072-9f87-80874cea483b)
