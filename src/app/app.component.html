@@ -3,11 +3,9 @@
     class="flex flex-col gap-4 items-center min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-gray-100"
   >
     <div class="mt-5">
-      <a href="https://nubisoft.io/" target="_blank">
-        <img src="assets/nubisoft.svg" alt="Nubisoft logo" />
-      </a>
+      <img src="assets/logo.svg" alt="WeatherAppLogo" />
     </div>
-    <h1>NubiWeather</h1>
+    <h1>WeatherApp</h1>
     <section class="grid gap-4 md:grid-cols-2 p-4">
       @if(citiesNamesList$ | async; as citiesNamesList){
       <ng-container *ngFor="let cityName of citiesNamesList; let index = index">
