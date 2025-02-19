@@ -15,7 +15,7 @@ The application is built with **responsive design**, ensuring that it looks and 
 - **Dark Mode**: Toggle between dark and light modes. The setting is saved in the browser’s local storage for persistence.
 
 ## Link
-You can check out the live version of the app here: [https://weather-app-nubisoft.web.app](https://weather-app-4151b.web.app/)
+You can check out the live version of the app here: https://weather-app-4151b.web.app/
 
 ## Installation
 
